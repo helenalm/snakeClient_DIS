@@ -1,0 +1,19 @@
+/*styles for jumbotron, som er den divbox som benyttes på samtlige sider for ensartet style*/
+#jumbotron {
+    background-color: #c1e2b3;
+    padding-top: 150px;
+    padding-bottom: 70px;
+}
+/*Grønne striber som benyttes på login og register siderne*/
+.colorgraph {
+    height: 5px;
+    border-top: 0;
+    background: #449d44;
+    border-radius: 5px;
+}
+
+#buttons {
+    width: 200px;
+    height: 50px;
+    padding-right: 150px;
+}
