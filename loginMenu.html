@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+    <title>Snake 1.0</title>
 
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+<div class="container">
+    <div id="jumbotron">
+        <div class="row" style="margin-top:-20px">
+            <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                <!--sign in form m. forskellige input types (email og password). Derefter input "submit/sign in" knap og button med href til register siden-->
+                <form role="form">
+                    <fieldset>
+                        <h2>Sign In Now</h2>
+                        <hr class="colorgraph">
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+                        </div>
+                        <hr class="colorgraph">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <a id="sign in" class="btn btn-lg btn-success btn-block" href="userMenu.html" role="button">Sign In</a>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <a id="register" class="btn btn-lg btn-success btn-block" href="registerMenu.html" role="button">Register</a>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/client.js"></script>
 </body>
 </html>
