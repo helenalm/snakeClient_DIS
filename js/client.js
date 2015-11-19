@@ -1,71 +1,70 @@
+//sender et event. Venter til dokumentet er færdig og så skyder den en funktion
 $(document).ready(function () {
 
-    $("#playNow").click(function () {
+    //login menu udkast
 
+    $("#login").click(function(){
+        var username = $("#username").val();
+        var password = $("#password").val();
 
-        $.ajax({
-            type: "GET",
-            url: "http://localhost:9998/api/user",
-            success: function (msg) {
-                console.log(msg);
-            }
-        });
+        console.log(username, password);
 
-    });
+        var data = {
+            username: username,
+            password: password
+        };
+        console.log(JSON.stringify(data));
 
-    $("#registerForm").validate({
-        rules: {
-            firstName: "required",
-            lastName: "required",
-            userName: {
-                required: true,
-                minlenght: 2
-            },
-            password: {
-                required: true,
-                minlenght: 4
-            },
-            confirm_password: {
-                required: true,
-                minlenght: 4,
-                equalTo: "#password"
-            },
-            email: {
-                required: true,
-                email: true
-            },
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:8888/api/login",
+        data: JSON.stringify(data),
+        success: function(data) {
+            window.location.href='userMenu.html';
         },
-        messages: {
-            firstName: "Woops! Enter your first name",
-            lastName: "Woops! Enter your last name",
-            userName: {
-                required: "Woops! Enter a username",
-                minlenght: "Woops! The username must be at least 2 characters"
-            },
-            password: {
-                required: "Woops! Enter a password",
-                minlenght: "Woops! The password must be at least 4 characters"
-            },
-            confirm_password: {
-                required: "Woops! Confirm your password",
-                minlenght: "Woops! Your password must be at least 4 characters",
-                equalTo: "Woops! Did you already forget your password?"
-            },
-            email: {
-                required: "Woops! Enter an email",
-                email: "Woops! Enter a REAL email"
-            }
+
+        error: function() {
+            alert("Wrong username or password. Try again")
         }
     });
+    });
 
-    $("#userName").focus(function() {
+    $("#register").click(function(){
         var firstName = $("#firstName").val();
         var lastName = $("#lastName").val();
-        if (firstName && lastName && !this.value) {
-            this.value = firstName + lastName;
-        }
+        var username = $("#username").val();
+        var password = $("#password").val();
+        var email = $("#email").val();
+
+        console.log(firstName, lastName, username, password, email);
+
+        var newuserdata = {
+            firstName: firstName,
+            lastName: lastName,
+            username: username,
+            password: password,
+            email: email
+        };
+        console.log(JSON.stringify(data));
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8888/api/users",
+            data: JSON.stringify(newuserdata),
+            succes: function(newuserdata) {
+             //   alert("Welcome to the best game ever!")
+           //     window.location.href='loginMenu.html';
+         //   },
+        //    error: function() {
+         //       alert("Something went wrong. Try again")
+        //    }
+     //   });
+
+
+
     });
+
 
 });
 
-$("#registerForm").validator();
+
