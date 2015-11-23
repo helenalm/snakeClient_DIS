@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     //login menu udkast
 
-    $("#login").click(function(){
+    $("#login").click(function () {
         var username = $("#username").val();
         var password = $("#password").val();
 
@@ -15,56 +15,49 @@ $(document).ready(function () {
         };
         console.log(JSON.stringify(data));
 
-    $.ajax({
-        type: "POST",
-        url: "http://localhost:8888/api/login",
-        data: JSON.stringify(data),
-        success: function(data) {
-            window.location.href='userMenu.html';
-        },
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8888/api/login",
+            data: JSON.stringify(data),
+            success: function (data) {
+                window.location.href = 'userMenu.html';
+            },
 
-        error: function() {
-            alert("Wrong username or password. Try again")
-        }
+            error: function () {
+                alert("Wrong username or password. Try again")
+            }
+        });
     });
-    });
 
-    $("#register").click(function(){
-        var firstName = $("#firstName").val();
-        var lastName = $("#lastName").val();
-        var username = $("#username").val();
-        var password = $("#password").val();
-        var email = $("#email").val();
+    $("#newuser").click(function () {
+        var Firstname = $("#firstName").val();
+        var Lastname = $("#lastName").val();
+        var Username = $("#username").val();
+        var Password = $("#password").val();
+        var Email = $("#email").val();
 
-        console.log(firstName, lastName, username, password, email);
+        //console.log(firstName, lastName, username, password, email);
 
-        var newuserdata = {
-            firstName: firstName,
-            lastName: lastName,
-            username: username,
-            password: password,
-            email: email
+        var user = {
+            firstName: Firstname,
+            lastName: Lastname,
+            username: Username,
+            password: Password,
+            email: Email
         };
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
 
         $.ajax({
             type: "POST",
             url: "http://localhost:8888/api/users",
-            data: JSON.stringify(newuserdata),
-            succes: function(newuserdata) {
-             //   alert("Welcome to the best game ever!")
-           //     window.location.href='loginMenu.html';
-         //   },
-        //    error: function() {
-         //       alert("Something went wrong. Try again")
-        //    }
-     //   });
-
-
-
+            data: JSON.stringify(user),
+            success:function(data) {
+                alert("Welcome to the best game ever!");
+                window.location.href = 'loginMenu.html';
+            },
+            error: function () {
+                alert("Something went wrong. Try again")
+            }
+        });
     });
-
-
 });
-
-
