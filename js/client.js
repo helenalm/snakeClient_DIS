@@ -1,7 +1,7 @@
 //sender et event. Venter til dokumentet er færdig og så skyder den en funktion
 $(document).ready(function () {
 
-    //login menu udkast
+    //login menu
 
     $("#login").click(function () {
         var username = $("#username").val();
@@ -22,7 +22,7 @@ $(document).ready(function () {
             success: function (data) {
                 $.session.set('userID', data.userid);
                 console.log(data);
-               window.location.href = 'userMenu.html';
+                window.location.href = 'userMenu.html';
             },
 
             error: function () {
@@ -31,6 +31,7 @@ $(document).ready(function () {
         });
     });
 
+    // create user
     $("#newuser").click(function () {
         var Firstname = $("#firstName").val();
         var Lastname = $("#lastName").val();
@@ -63,12 +64,10 @@ $(document).ready(function () {
         });
     });
 
+    // create game
     $("#creategame").click(function () {
         var creategame = {
             name: $("#gameName").val(),
-            opponent: {
-                id: $("#opponentid").val()
-            },
             host: {
                 id: $.session.get('userID'),
                 controls: $("#hostcontrols").val()
@@ -90,9 +89,10 @@ $(document).ready(function () {
         })
     });
 
+    // delete game
     $("#deleteGame").click(function () {
-            var gameid = $("#gameID").val();
-            hostid: $.session.get('userID');
+        var gameid = $("#gameID").val();
+        hostid: $.session.get('userID');
 
         $.ajax({
             type: "POST",
@@ -107,4 +107,31 @@ $(document).ready(function () {
             }
         })
     });
+
+    // join game
+    $("#joinGame").click(function () {
+        var joingame = {
+            gameId: $("#gameID").val(),
+            opponent: {
+                id: $.session.get('userID')
+            }
+        };
+
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:8888/api/games/join/",
+        data: JSON.stringify(joingame),
+        succes: function (data) {
+            alert("Sådan!");
+        },
+
+        error: function () {
+            alert("Something went wrong. Try again")
+        }
+    })
+});
+
+    // Start game
+
+    // highscore
 });

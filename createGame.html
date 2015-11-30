@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake 1.0</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+<div class="container">
+    <div id="jumbotron">
+        <div class="row" style="margin-top:-20px">
+            <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+
+                <fieldset>
+                    <h2>Start playing the snake game</h2>
+                    <hr class="colorgraph">
+                    <div class="form-group">
+                        <input type="text" name="username" id="gameName" class="form-control input-lg"
+                               placeholder="Gamename">
+                    </div>
+                    <!--<div class="form-group">
+                        <input type="text" name="password" id="opponentid" class="form-control input-lg"
+                               placeholder="Opponent ID">
+                    </div>-->
+                    <!--<div class="form-group">
+                        <input type="text" name="username" id="hostid" class="form-control input-lg"
+                               placeholder="Host ID"
+                    </div>-->
+                    <div class="form-group">
+                        <input type="text" name="password" id="hostcontrols" class="form-control input-lg"
+                               placeholder="Controls">
+                    </div>
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <button id="creategame" class="btn btn-success btn-block btn-lg" tabindex="7">
+                                Create game
+                            </button>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <a id="back" class="btn btn-lg btn-success btn-block" href="userMenu.html" role="button">Back</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.session.js"></script>
+    <script src="js/client.js"></script>
+
+</div>
+</body>
+</html>
