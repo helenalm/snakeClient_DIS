@@ -71,7 +71,8 @@ $(document).ready(function () {
             host: {
                 id: $.session.get('userID'),
                 controls: $("#hostcontrols").val()
-            }
+            },
+            mapSize: $("#mapSize").val()
         };
 
         $.ajax({
@@ -121,7 +122,8 @@ $(document).ready(function () {
         type: "POST",
         url: "http://localhost:8888/api/games/join/",
         data: JSON.stringify(joingame),
-        succes: function (data) {
+        success: function (data) {
+            //$.session.set('gameID', data.game);
             alert("Sådan!");
         },
 
@@ -132,6 +134,28 @@ $(document).ready(function () {
 });
 
     // Start game
+    $("#startGame").click(function () {
+        var startgame = {
+            gameId: $("#gameid").val(),
+            opponent: {
+                //id: $.session.get('userID'),
+                controls: $("#opponentcontrols").val()
+            }
+        };
 
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8888/api/games/start/",
+            data: JSON.stringify(startgame),
+            success: function (data) {
+                $.session.get('gameID'),
+                alert("Cool! Take a look, maybe you reached the leaderboard");
+            },
+
+            error: function () {
+                alert("Something went wrong. Try again")
+            }
+        })
+    });
     // highscore
 });
