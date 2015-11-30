@@ -20,7 +20,9 @@ $(document).ready(function () {
             url: "http://localhost:8888/api/login",
             data: JSON.stringify(data),
             success: function (data) {
-                window.location.href = 'userMenu.html';
+                $.session.set('userID', data.userid);
+                console.log(data);
+               window.location.href = 'userMenu.html';
             },
 
             error: function () {
@@ -51,7 +53,7 @@ $(document).ready(function () {
             type: "POST",
             url: "http://localhost:8888/api/users",
             data: JSON.stringify(user),
-            success:function(data) {
+            success: function (data) {
                 alert("Welcome to the best game ever!");
                 window.location.href = 'loginMenu.html';
             },
@@ -59,5 +61,50 @@ $(document).ready(function () {
                 alert("Something went wrong. Try again")
             }
         });
+    });
+
+    $("#creategame").click(function () {
+        var creategame = {
+            name: $("#gameName").val(),
+            opponent: {
+                id: $("#opponentid").val()
+            },
+            host: {
+                id: $.session.get('userID'),
+                controls: $("#hostcontrols").val()
+            }
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8888/api/games",
+            data: JSON.stringify(creategame),
+            success: function (data) {
+                $.session.get('userID');
+                window.location.href = 'userMenu.html';
+            },
+
+            error: function () {
+                alert("Something went wrong. Try again")
+            }
+        })
+    });
+
+    $("#deleteGame").click(function () {
+            var gameid = $("#gameID").val();
+            hostid: $.session.get('userID');
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8888/api/games/" + gameid,
+            //data: JSON.stringify(deleteGame),
+            succes: function (data) {
+                alert("Game was deleted!");
+            },
+
+            error: function () {
+                alert("Something went wrong. Try again")
+            }
+        })
     });
 });

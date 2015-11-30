@@ -17,16 +17,16 @@
                     <h2>Snake 1.0 <small>The best game ever!</small></h2>
                     <hr class="colorgraph">
                     <div class="row">
-                        <div class="col-xs-12 col-md-6"><center><input type="submit" value="Start Game" class="btn btn-success btn-block btn-lg" tabindex="7"></center></div>
+                        <div class="col-xs-12 col-md-6"><a type="newgame" href="startGame.html" class="btn btn-success btn-block btn-lg" tabindex="7">Start Game</a></div>
 
                         <div class="col-xs-6 col-sm-6 col-md-6">
-                            <a id="back" class="btn btn-lg btn-success btn-block" href="loginMenu.html" role="button">Highscore</a>
+                            <a id="highscore" class="btn btn-lg btn-success btn-block" role="button">Highscore</a>
                         </div>
                     </div>
                     <br>
 
                     <div class="row">
-                        <div class="col-xs-12 col-md-6"><center><input type="submit" value="Delete Game" class="btn btn-success btn-block btn-lg" tabindex="7"></center></div>
+                        <div class="col-xs-12 col-md-6"><a type="deletegame" href="deleteGame.html" class="btn btn-success btn-block btn-lg" tabindex="7">Delete Game</a></div>
 
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <a id="back" class="btn btn-lg btn-success btn-block" href="loginMenu.html" role="button">Back</a>
@@ -43,7 +43,7 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/client.js"></script>
-
+    <script src="js/jquery.session.js"></script>
 </div>
 </body>
 </html>
