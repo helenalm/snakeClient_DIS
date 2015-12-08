@@ -1,7 +1,10 @@
 //sender et event. Venter til dokumentet er færdig og så skyder den en funktion
 $(document).ready(function () {
 
-    //login menu
+    /*
+    login menu. Her rammes id'et som er sat på login knappen.
+    Der tjekkes at det indtastede username og password findes i db.
+     */
 
     $("#login").click(function () {
         var username = $("#username").val();
@@ -81,7 +84,7 @@ $(document).ready(function () {
             data: JSON.stringify(creategame),
             success: function (data) {
                 $.session.get('userID');
-                window.location.href = 'userMenu.html';
+                //window.location.href = 'userMenu.html';
             },
 
             error: function () {
@@ -99,7 +102,7 @@ $(document).ready(function () {
             type: "POST",
             url: "http://localhost:8888/api/games/" + gameid,
             //data: JSON.stringify(deleteGame),
-            succes: function (data) {
+            success: function (data) {
                 alert("Game was deleted!");
             },
 
@@ -124,7 +127,7 @@ $(document).ready(function () {
         data: JSON.stringify(joingame),
         success: function (data) {
             //$.session.set('gameID', data.game);
-            alert("Sådan!");
+            alert("Game was joined. Go play!");
         },
 
         error: function () {
@@ -148,7 +151,7 @@ $(document).ready(function () {
             url: "http://localhost:8888/api/games/start/",
             data: JSON.stringify(startgame),
             success: function (data) {
-                $.session.get('gameID'),
+                //$.session.get('gameID'),
                 alert("Cool! Take a look, maybe you reached the leaderboard");
             },
 
@@ -158,4 +161,25 @@ $(document).ready(function () {
         })
     });
     // highscore
+   $.ajax({
+        type: "GET",
+        url: "http://localhost:8888/api/scores/",
+
+        success: function (data) {
+            console.log(data)
+
+            data.forEach(function (item) {
+                var table =
+                    "<tr><td>" + item.score + "</td><td>" + item.user.username + "</td></tr>";
+
+                $("#highscores").append(table);
+
+                console.log(data);
+            });
+            },
+
+                error: function() {
+                    alert("Something went wrong. Try again")
+                }
+    });
 });

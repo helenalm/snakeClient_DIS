@@ -1,24 +1,28 @@
+<!--Doctype defineres. Sporg defineres som engelsk.
+Så opsættes head, hvor titlen sættes til Snake 1.0 (Dette ses i vinduetoppen)-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Snake 1.0</title>
-    <!--Impl. af eget og bootstrap stylesheet -->
+    <!--Impl. af eget og bootstrap stylesheets.
+    CSS implementeres altid i header, da det er en af de vigtigste ting, når siden skal loades. -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
-
+<!--Body opsættes, hvorefter div klassen "container" opsættes - denne indholder alt der fremgår på klienten.
+jumbotron er den grønne boks som går igen på alle siderne og skaber en rød tråd (designmæssigt)-->
 <body>
 <div class="container">
     <div id="jumbotron"><center>
         <h1>The Snake Game</h1>
         <p>Welcome. Play safe!<br><br></p>
-        <p><a href="loginMenu.html"><button id="playNow" class="btn btn-success btn-lg" role="button">Play now!</button></a></p></center>
+        <p><a href="loginMenu.html"><button id="playNow" class="btn btn-success btn-lg">Play now!</button></a></p>
     </div>
 </div>
-<!--til sidst impl. jquery og bootstrap.-->
-<!--dette gøres til sidst, fordi at hvis siden endelig ikke kan fuldt loades, er det det "mindst vigtige" styles fra siden-->
+<!--til sidst impl. jquery og bootstrap.
+dette gøres til sidst, fordi at hvis siden endelig ikke kan fuldt loades, er det det "mindst vigtige" styles fra siden-->
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/client.js"></script>

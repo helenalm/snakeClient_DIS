@@ -11,23 +11,28 @@
 <body>
 <div class="container">
     <div id="jumbotron">
-        <div class="panel panel-success centered" id="highscorepanel">
-            <div class="panel-heading" id="highscorepanel-heading"><h2>Highscore</h2></div>
-            <div class="panel-body" id="highscorepanel-body">
-                <p>#1: </p>
-                <p>#2: </p>
-                <p>#3: </p>
-                <p>#4: </p>
-                <p>#5: </p>
-            </div>
-        </div>
+        <div class="row"  style="margin-top:-20px">
+            <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                <h1>Highscore <small>all the coolest people ever</small></h1>
+                <hr class="colorgraph">
+        <table id="highscores">
+            <tr>
+                <th id="hstabel"><h4>Score </h4></th>
+                <th id="hstabel"><h4>Username </h4></th>
+                <!--<th id="hstabel"><h4>Opponent ID </h4></th>-->
+            </tr>
+        </table>
+        <br>
+                <hr class="colorgraph">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 centered">
-                <a id="back" class="btn btn-lg btn-success btn-block" href="loginMenu.html" role="button">Back</a>
+                <a id="back" class="btn btn-lg btn-success btn-block" href="userMenu.html" role="button">Back</a>
             </div>
         </div>
     </div>
 </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/client.js"></script>
