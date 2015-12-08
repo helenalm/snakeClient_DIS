@@ -84,6 +84,7 @@ $(document).ready(function () {
             data: JSON.stringify(creategame),
             success: function (data) {
                 $.session.get('userID');
+                alert("Game was created!");
                 //window.location.href = 'userMenu.html';
             },
 
