@@ -11,32 +11,37 @@
 <body>
 <div class="container">
     <div id="jumbotron">
-        <div class="row"  style="margin-top:-20px">
-            <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-                <h1>Highscore <small>all the coolest people ever</small></h1>
-                <hr class="colorgraph">
-        <table id="highscores">
-            <tr>
-                <th id="hstabel"><h4>Score </h4></th>
-                <th id="hstabel"><h4>Username </h4></th>
-                <!--<th id="hstabel"><h4>Opponent ID </h4></th>-->
-            </tr>
-        </table>
-        <br>
-                <hr class="colorgraph">
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 centered">
-                <a id="back" class="btn btn-lg btn-success btn-block" href="userMenu.html" role="button">Back</a>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                <h1>Highscore
+                    <small>all the coolest people ever</small>
+                </h1>
+                <hr class="colorgraph">
+                <!--here is made a table with an id, so the js can access it easily-->
+                <table id="highscores">
+                    <tr>
+                        <!--table header got an id so that the stylesheet can access it.
+                        The other rows and cells are defined in the client.js-->
+                        <th id="hstabel"><h4>Score </h4></th>
+                        <th id="hstabel"><h4>Username </h4></th>
+                    </tr>
+                </table>
+                <br>
+                <hr class="colorgraph">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6 centered">
+                        <a id="back" class="btn btn-lg btn-success btn-block" href="userMenu.html"
+                           role="button">Back</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/client.js"></script>
-    <script src="js/jquery.session.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/client.js"></script>
+<script src="js/jquery.session.js"></script>
 </div>
 </body>
 </html>

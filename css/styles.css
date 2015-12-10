@@ -1,10 +1,11 @@
-/*styles for jumbotron, som er den divbox som benyttes på samtlige sider for ensartet style*/
+/* styles for jumbotron, the div box on every page */
 #jumbotron {
     background-color: #c1e2b3;
     padding-top: 150px;
     padding-bottom: 70px;
 }
-/*Grønne striber som benyttes på login og register siderne*/
+
+/* Green line that is used on every page (except index) */
 .colorgraph {
     height: 5px;
     border-top: 0;
@@ -12,39 +13,7 @@
     border-radius: 5px;
 }
 
-#buttons {
-    width: 200px;
-    height: 50px;
-    padding-right: 150px;
-}
-
-
-#highscorepanel {
-    border-color: #d6e9c6;
-    width: 470px;
-}
-#highscorepanel > #highscorepanel-heading {
-    color: #3c763d;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-}
-#highscorepanel > #highscorepanel-heading > #highscorepanel-body {
-    border-top-color: #d6e9c6;
-}
-#highscorepanel > #highscorepanel-heading .badge {
-    color: #dff0d8;
-    background-color: #3c763d;
-}
-#highscorepanel > #highscorepanel-body {
-    border-bottom-color: #d6e9c6;
-}
-
-.centered {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/* styles for the highscore table, so that the score and username don't stand so close*/
 #hstabel {
-    padding-right: 70px;
+    padding-right: 150px;
 }

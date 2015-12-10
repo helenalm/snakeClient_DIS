@@ -8,45 +8,48 @@
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
-
 <body>
 <div class="container">
     <div id="jumbotron">
-        <div class="row" style="margin-top:-20px">
+        <div class="row">
+            <!-- This class defines where on the page the fieldset is places.
+            Defined in bootstrap. -->
             <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 
-                <fieldset>
-                    <h2>Start playing the snake game</h2>
-                    <hr class="colorgraph">
-                    <div class="form-group">
-                        <input type="text" id="gameName" class="form-control input-lg"
-                               placeholder="Game Name" tabindex="1">
+                <h2>Start playing the snake game</h2>
+                <!-- the greem line shown in the top and bottom of every page -->
+                <hr class="colorgraph">
+                <!--because the input fields is in this class is a form, it is put in the
+                div box "form-group". everytime the input fied is on a new line, it is in a
+                new div box. Every input field has its own id, so that js can access it easily.
+                tab index means that you can navigate in the fields the the tap-button on your computer-->
+                <div class="form-group">
+                    <input type="text" id="gameName" class="form-control input-lg"
+                           placeholder="Game Name" tabindex="1">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="mapSize" class="form-control input-lg"
+                           placeholder="Map Size" tabindex="2">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="hostcontrols" class="form-control input-lg"
+                           placeholder="Controls" tabindex="3">
+                </div>
+                <hr class="colorgraph">
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        <!--button creategame is made with an id-->
+                        <button id="creategame" class="btn btn-success btn-block btn-lg" tabindex="4">
+                            Create game
+                        </button>
                     </div>
-                    <!--<div class="form-group">
-                        <input type="text" name="password" id="opponentid" class="form-control input-lg"
-                               placeholder="Opponent ID">
-                    </div>-->
-                    <div class="form-group">
-                        <input type="text" id="mapSize" class="form-control input-lg"
-                               placeholder="Map Size" tabindex="2">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="hostcontrols" class="form-control input-lg"
-                               placeholder="Controls" tabindex="3">
-                    </div>
-                    <hr class="colorgraph">
-                    <div class="row">
-                        <div class="col-xs-6 col-md-6">
-                            <button id="creategame" class="btn btn-success btn-block btn-lg" tabindex="4">
-                                Create game
-                            </button>
-                        </div>
 
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <a id="back" class="btn btn-lg btn-success btn-block" href="userMenu.html" role="button">Back</a>
-                        </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <!--a button with a link back is made, so you get back to the usermenu-->
+                        <a id="back" class="btn btn-lg btn-success btn-block" href="userMenu.html"
+                           role="button">Back</a>
                     </div>
-                </fieldset>
+                </div>
             </div>
         </div>
     </div>

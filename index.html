@@ -1,28 +1,34 @@
-<!--Doctype defineres. Sporg defineres som engelsk.
-Så opsættes head, hvor titlen sættes til Snake 1.0 (Dette ses i vinduetoppen)-->
+<!--Doctype defined. Language defines as english.
+head is configured, titel is set to Snake 1.0 (this is shown in the window-top)-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Snake 1.0</title>
-    <!--Impl. af eget og bootstrap stylesheets.
-    CSS implementeres altid i header, da det er en af de vigtigste ting, når siden skal loades. -->
+    <!--Implenents my own and boostrap stylesheets.
+    CSS is alway implementated in the header, because its one of the most importaint thing,
+    when the web page is about to load.-->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
-<!--Body opsættes, hvorefter div klassen "container" opsættes - denne indholder alt der fremgår på klienten.
-jumbotron er den grønne boks som går igen på alle siderne og skaber en rød tråd (designmæssigt)-->
+<!--Body is created. The div class container is created - it contains everything
+that appears on the page. the div 'jumbotron' is the green box, that is shown on every page
+for creating a red threat throughout the page (design-wise)-->
 <body>
 <div class="container">
-    <div id="jumbotron"><center>
-        <h1>The Snake Game</h1>
-        <p>Welcome. Play safe!<br><br></p>
-        <p><a href="loginMenu.html"><button id="playNow" class="btn btn-success btn-lg">Play now!</button></a></p>
+    <div id="jumbotron">
+            <h1>The Snake Game</h1>
+
+            <p>Welcome. Play safe!<br><br></p>
+
+            <p><a href="loginMenu.html">
+                <button id="playNow" class="btn btn-success btn-lg">Play now!</button>
+            </a></p>
     </div>
 </div>
-<!--til sidst impl. jquery og bootstrap.
-dette gøres til sidst, fordi at hvis siden endelig ikke kan fuldt loades, er det det "mindst vigtige" styles fra siden-->
+<!--At last we implement jquery, bootstrap and the other scripts).
+This is done last, because if the site is slow loading, it is the "least important"-->
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/client.js"></script>
