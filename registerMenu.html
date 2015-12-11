@@ -1,13 +1,20 @@
+<!--Doctype defined. Language defines as english.
+head is configured, titel is set to Snake 1.0 (this is shown in the window-top)-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Snake 1.0</title>
-
+    <!--Implenents my own and boostrap stylesheets.
+        CSS is alway implementated in the header, because its one of the most importaint thing,
+        when the web page is about to load.-->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
+<!--Body is created. The div class container is created - it contains everything
+that appears on the page. the div 'jumbotron' is the green box, that is shown on every page
+for creating a red threat throughout the page (design-wise)-->
 <body>
 <div class="container">
     <div id="jumbotron">
@@ -19,7 +26,9 @@
                     </h2>
                     <hr class="colorgraph">
                     <!--register form where you state information to make a user.
-                    You can connect the js with the DOM through the ids defined-->
+                    You can connect the js with the DOM through the ids defined.
+                    Every input fields is put into a div box and another called "form-group"
+                    These desides where the to the sides the fields go -->
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group">
@@ -70,7 +79,8 @@
             </div>
         </div>
     </div>
-
+    <!--At last we implement jquery, bootstrap and the other scripts).
+    This is done last, because if the site is slow loading, it is the "least important"-->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/registerValidation.js"></script>

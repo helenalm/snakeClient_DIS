@@ -1,13 +1,20 @@
+<!--Doctype defined. Language defines as english.
+head is configured, titel is set to Snake 1.0 (this is shown in the window-top)-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Snake 1.0</title>
-
+    <!--Implenents my own and boostrap stylesheets.
+        CSS is alway implementated in the header, because its one of the most importaint thing,
+        when the web page is about to load.-->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
+<!--Body is created. The div class container is created - it contains everything
+that appears on the page. the div 'jumbotron' is the green box, that is shown on every page
+for creating a red threat throughout the page (design-wise)-->
 <body>
 <div class="container">
     <div id="jumbotron">
@@ -16,7 +23,8 @@
                 <h2>Join Game</h2>
                 <hr class="colorgraph">
                 <!-- the different input fields is put into different div boxes to
-                 put them into right place -->
+                 put them into right place. The input fields and button got id's, so you
+                  can access them with js or css-->
                 <div class="form-group">
                     <input type="text" id="gameID" class="form-control input-lg"
                            placeholder="Game ID" tabindex="1">
@@ -35,7 +43,8 @@
     </div>
 </div>
 </div>
-
+<!--At last we implement jquery, bootstrap and the other scripts).
+This is done last, because if the site is slow loading, it is the "least important"-->
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.session.js"></script>
